@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Space fight</title>
+    <style>
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+      }
+
+      #assets {
+        opacity: 0;
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+      }
+
+      .main {
+        position: relative;
+      }
+
+      .header {
+        display: flex;
+        position: absolute;
+        top: 40px;
+        left: calc(50% - 375px);
+        width: 725px;
+        justify-content: space-between;
+      }
+
+      .lifebar-container {
+        background-color: #a00000;
+        display: flex;
+        width: 275px;
+        height: 32px;
+      }
+
+      .lifebar-container .lifebar {
+        background-color: #00a000;
+        width: 100%;
+        height: 100%;
+      }
+
+      .lifebar-container + .lifebar-container {
+        justify-content: flex-end;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <canvas id="main-canvas"></canvas>
+      <div class="header">
+        <div class="lifebar-container">
+          <div class="lifebar"></div>
+        </div>
+        <div class="lifebar-container">
+          <div class="lifebar"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="assets">
+      <!-- Scripts -->
+      <script src="./src/js/Entity.js"></script>
+      <script src="./src/js/Player.js"></script>
+      <script src="./src/js/main.js"></script>
+    </div>
+  </body>
+</html>
